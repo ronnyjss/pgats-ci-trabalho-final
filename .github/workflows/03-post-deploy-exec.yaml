@@ -10,7 +10,7 @@ name: 'N3 - Execução por Deploy'
 
 on:
   workflow_run:
-    workflows: ['N1 - Execução Manual', 'N2 - Execução Agendada', "N4 - Execução por Pull Request"]
+    workflows: ['N1 - Execução Manual', 'N2 - Execução Agendada', 'N4 - Execução Integrada']
     types:
       - completed
 
