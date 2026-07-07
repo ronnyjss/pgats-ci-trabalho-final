@@ -15,16 +15,17 @@ A proposta da pipeline é garantir maior confiabilidade no processo de desenvolv
 
 Os arquivos de automação estão localizados em [.github/workflows](.github/workflows), e cada um deles atende a um cenário específico de execução:
 
-| Workflow | Arquivo | Gatilho | Função principal |
-| --- | --- | --- | --- |
-| N1 - Execução Manual | [.github/workflows/01-manual-exec.yaml](.github/workflows/01-manual-exec.yaml) | `workflow_dispatch` | Execução manual dos testes E2E |
-| N2 - Execução Agendada | [.github/workflows/02-scheduled-exec.yaml](.github/workflows/02-scheduled-exec.yaml) | `schedule` | Execução automática periódica |
-| N3 - Execução por Deploy | [.github/workflows/03-post-deploy-exec.yaml](.github/workflows/03-post-deploy-exec.yaml) | `workflow_run` | Execução após conclusão de outras pipelines |
-| N4 - Execução Integrada | [.github/workflows/04-integrated-exec.yaml](.github/workflows/04-integrated-exec.yaml) | `push` e `workflow_dispatch` | Validação completa do projeto antes do deploy |
+| Workflow                 | Arquivo                                                                                  | Gatilho                      | Função principal                              |
+| ------------------------ | ---------------------------------------------------------------------------------------- | ---------------------------- | --------------------------------------------- |
+| N1 - Execução Manual     | [.github/workflows/01-manual-exec.yaml](.github/workflows/01-manual-exec.yaml)           | `workflow_dispatch`          | Execução manual dos testes E2E                |
+| N2 - Execução Agendada   | [.github/workflows/02-scheduled-exec.yaml](.github/workflows/02-scheduled-exec.yaml)     | `schedule`                   | Execução automática periódica                 |
+| N3 - Execução por Deploy | [.github/workflows/03-post-deploy-exec.yaml](.github/workflows/03-post-deploy-exec.yaml) | `workflow_run`               | Execução após conclusão de outras pipelines   |
+| N4 - Execução Integrada  | [.github/workflows/04-integrated-exec.yaml](.github/workflows/04-integrated-exec.yaml)   | `push` e `workflow_dispatch` | Validação completa do projeto antes do deploy |
 
 ## Descrição dos workflows
 
 ### 1. Workflow de execução manual
+
 Arquivo: [.github/workflows/01-manual-exec.yaml](.github/workflows/01-manual-exec.yaml)
 
 Este workflow permite a execução controlada dos testes E2E diretamente pela interface do GitHub. O processo inclui:
@@ -37,16 +38,19 @@ Este workflow permite a execução controlada dos testes E2E diretamente pela in
 - armazenamento do relatório em formato de artefato.
 
 ### 2. Workflow de execução agendada
+
 Arquivo: [.github/workflows/02-scheduled-exec.yaml](.github/workflows/02-scheduled-exec.yaml)
 
 O gatilho `schedule` permite a execução automática do workflow conforme uma agenda definida pelo cron. Nesse cenário, a pipeline é responsável por verificar continuamente a estabilidade da aplicação, mesmo na ausência de novas alterações no código.
 
 ### 3. Workflow disparado após outra execução
+
 Arquivo: [.github/workflows/03-post-deploy-exec.yaml](.github/workflows/03-post-deploy-exec.yaml)
 
 Este workflow utiliza o evento `workflow_run` para iniciar novas validações após a conclusão bem-sucedida de outras pipelines. Esse mecanismo é particularmente útil para organizar etapas sequenciais de validação e evitar que testes sejam executados antes da conclusão das etapas preliminares.
 
 ### 4. Workflow integrado com push
+
 Arquivo: [.github/workflows/04-integrated-exec.yaml](.github/workflows/04-integrated-exec.yaml)
 
 Esse workflow representa a abordagem mais completa de CI, pois executa, em sequência, as seguintes etapas:
@@ -110,4 +114,3 @@ Os resultados dos testes E2E são armazenados no artefato `playwright-report`, p
 ## Considerações finais
 
 A arquitetura proposta demonstra como a automação de testes pode ser integrada ao ciclo de desenvolvimento de software, promovendo maior segurança, previsibilidade e qualidade nas entregas.
-
