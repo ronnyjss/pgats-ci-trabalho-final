@@ -1,7 +1,7 @@
 # CI de Nível 04 - Pipeline Integrada ao Build do Código
 
 # nome da pipeline
-name: 'N4 -Execução Integrada'
+name: 'N4 - Execução Integrada'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
