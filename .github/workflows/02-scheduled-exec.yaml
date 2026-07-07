@@ -1,19 +1,17 @@
-# CI de Nível 04 - Pipeline Integrada ao Build do Código
+# CI de Nível 02 - Execução Agendada
 
 # nome da pipeline
-name: 'N4 -Execução Integrada'
+name: 'N2 - Execução Agendada'
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
 # gatilho agendado = schedule
-# gatilho por conclusão de outra pipeline = workflow_run
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # meia-noite
 
-  push:
-    branches:
-      - master
 #tarefas dentro da pipeline = jobs
 
 jobs:
