@@ -21,6 +21,9 @@ jobs:
   e2e-tests:
     # maquina onde o job vai rodar
     runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1
+      PLAYWRIGHT_BASE_URL: http://127.0.0.1:3000
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
