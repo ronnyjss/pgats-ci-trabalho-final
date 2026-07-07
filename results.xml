@@ -1,0 +1,100 @@
+<testsuites id="" name="" tests="3" failures="3" skipped="0" errors="0" time="31.863268">
+<testsuite name="example.spec.js" timestamp="2026-06-20T18:26:30.289Z" hostname="chromium" tests="3" failures="3" skipped="0" time="90.258" errors="0">
+<testcase name="user rides › user should be able to ride" classname="example.spec.js" time="30.099">
+<failure message="example.spec.js:9:3 user should be able to ride" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.js:9:3 › user rides › user should be able to ride ──────────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Choose Roba Swings' })
+
+
+       8 |
+       9 |   test('user should be able to ride', async ({ page }) => {
+    > 10 |     await page.getByRole('link', { name: 'Choose Roba Swings' }).click();
+         |                                                                  ^
+      11 |     await page.getByLabel('Amount of people').selectOption('2');
+      12 |     await page.getByRole('button', { name: 'Next' }).click();
+      13 |
+
+        at F:\POS\pgats-ci\e2e\example.spec.js:10:66
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\example-user-rides-user-should-be-able-to-ride-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\example-user-rides-user-should-be-able-to-ride-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="user rides › user above height should not be allowed" classname="example.spec.js" time="30.071">
+<failure message="example.spec.js:17:3 user above height should not be allowed" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.js:17:3 › user rides › user above height should not be allowed ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Choose Robo Coaster Of Doom' })
+
+
+      18 |     await page
+      19 |       .getByRole('link', { name: 'Choose Robo Coaster Of Doom' })
+    > 20 |       .click();
+         |        ^
+      21 |     await page.getByLabel('Amount of people').selectOption('1');
+      22 |     await page.getByLabel('Height for person').click();
+      23 |     await page.getByLabel('Height for person').fill('139');
+
+        at F:\POS\pgats-ci\e2e\example.spec.js:20:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\example-user-rides-user-above-height-should-not-be-allowed-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\example-user-rides-user-above-height-should-not-be-allowed-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="user rides › user with minimum height should be allowed" classname="example.spec.js" time="30.088">
+<failure message="example.spec.js:30:3 user with minimum height should be allowed" type="FAILURE">
+<![CDATA[  [chromium] › example.spec.js:30:3 › user rides › user with minimum height should be allowed ──────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('link', { name: 'Choose Robo Coaster Of Doom' })
+
+
+      31 |     await page
+      32 |       .getByRole('link', { name: 'Choose Robo Coaster Of Doom' })
+    > 33 |       .click();
+         |        ^
+      34 |     await page.getByLabel('Amount of people').selectOption('1');
+      35 |     await page.getByLabel('Height for person').click();
+      36 |     await page.getByLabel('Height for person').fill('141');
+
+        at F:\POS\pgats-ci\e2e\example.spec.js:33:8
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\example-user-rides-user-wi-9520c-um-height-should-be-allowed-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\example-user-rides-user-wi-9520c-um-height-should-be-allowed-chromium\test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
